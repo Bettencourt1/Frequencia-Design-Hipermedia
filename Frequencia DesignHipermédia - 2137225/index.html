@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SIDoc – Serviço de Informação dos Docentes</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <input type="checkbox" id="theme-toggle" hidden>
+
+  <div class="page">
+
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="logo">Universidade da Madeira</div>
+
+      <nav class="main-nav">
+        <button class="nav-btn">Sumários</button>
+        <button class="nav-btn">Assiduidade</button>
+        <button class="nav-btn">Calendário</button>
+      </nav>
+
+      <label for="theme-toggle" class="theme-switch">🌞 / 🌙</label>
+    </header>
+
+    <!-- MAIN -->
+    <main class="site-main">
+
+      <!-- REGISTO DE ASSIDUIDADE (TÍTULO COMO NO ORIGINAL) -->
+      <section class="info-bar">
+        <h1>Registo de Assiduidade: Design Hipermédia_CTeSP_TPSI/Trabalho</h1>
+      </section>
+
+      <!-- GRID PRINCIPAL: ASSIDUIDADE + SUMÁRIO -->
+      <section class="main-grid">
+
+        <!-- ASSIDUIDADE -->
+        <section class="assiduidade card">
+          <h2>Registo de Assiduidade</h2>
+
+          <div class="assiduidade-header">
+            <span>Data:</span>
+            <input type="date">
+          </div>
+
+          <div class="alunos-grid">
+            <label><input type="checkbox"> João Silva</label>
+            <label><input type="checkbox"> Maria Sousa</label>
+            <label><input type="checkbox"> Ana Freitas</label>
+            <label><input type="checkbox"> Pedro Gomes</label>
+            <label><input type="checkbox"> Luís Andrade</label>
+            <label><input type="checkbox"> Sofia Ramos</label>
+            <label><input type="checkbox"> Bruno Costa</label>
+            <label><input type="checkbox"> Carla Nunes</label>
+          </div>
+        </section>
+
+        <!-- SUMÁRIO -->
+        <section class="sumario card">
+          <h2>Preenchimento de Sumário</h2>
+
+          <label>
+            Unidade Curricular
+            <select>
+              <option>Design Hipermédia_CTeSP_TPSI/Trabalho</option>
+            </select>
+          </label>
+
+          <label>
+            Título do Sumário
+            <input type="text" placeholder="Ex: Introdução ao CSS Grid">
+          </label>
+
+          <label>
+            Conteúdo do Sumário
+            <textarea rows="6" placeholder="Descreva aqui o conteúdo da aula..."></textarea>
+          </label>
+
+          <div class="topicos-actions">
+            <button class="ghost-btn">Adicionar Tópico de Sumário</button>
+            <button class="ghost-btn">Retirar Tópico de Sumário</button>
+          </div>
+
+          <details class="topics">
+            <summary>Tópicos do Sumário</summary>
+            <ul>
+              <li>Introdução ao tema</li>
+              <li>Exercícios práticos</li>
+              <li>Discussão final</li>
+            </ul>
+          </details>
+
+          <button class="submit-btn">Submeter Sumário</button>
+        </section>
+
+      </section>
+
+      <!-- CALENDÁRIO (BLOCO SEPARADO COMO NA PÁGINA ANTIGA) -->
+      <section class="calendar-section card">
+        <h2>Calendário</h2>
+
+        <div class="calendar-grid">
+          <label>
+            Mês
+            <select>
+              <option>Janeiro 2026</option>
+              <option>Fevereiro 2026</option>
+            </select>
+          </label>
+
+          <label>
+            Aula
+            <select>
+              <option>Aula 1</option>
+              <option>Aula 2</option>
+              <option>Aula 3</option>
+            </select>
+          </label>
+
+          <label>
+            Tipo
+            <select>
+              <option>Teórica</option>
+              <option>Prática</option>
+            </select>
+          </label>
+        </div>
+      </section>
+
+      <!-- TEXTO SIDOC COMO NO ORIGINAL -->
+      <section class="sidoc-version">
+        <p>SIDoc - Serviço de Informação dos Docentes - v3.2.3</p>
+      </section>
+
+    </main>
+
+    <!-- FOOTER COM LOGOS / TEXTO -->
+    <footer class="site-footer">
+      <div class="footer-logos">
+        <span>2030 MADEIRA</span>
+        <span>REGIÃO AUTÓNOMA DA MADEIRA</span>
+        <span>PORTUGAL 2030</span>
+        <span>Cofinanciado pela União Europeia</span>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>
