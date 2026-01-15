@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SIDoc – Serviço de Informação dos Docentes</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <input type="checkbox" id="theme-toggle" hidden>
+
+  <div class="page">
+
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="logo">Universidade da Madeira</div>
+
+      <nav class="main-nav">
+      </nav>
+
+      <label for="theme-toggle" class="theme-switch">🌞 / 🌙</label>
+    </header>
+
+    <!-- MAIN -->
+    <main class="site-main">
+
+      <!-- GRID PRINCIPAL: ASSIDUIDADE + SUMÁRIO -->
+      <section class="main-grid">
+
+        <!-- ASSIDUIDADE -->
+        <section class="assiduidade card">
+          <h2>Registo de Assiduidade</h2>
+
+          <div class="assiduidade-header">
+            <span>Mês:</span>
+            <select>
+              <option>Janeiro 2026</option>
+              <option>Fevereiro 2026</option>
+              <option>Março 2026</option>
+            </select>
+          </div>
+
+          <div class="week-tabs">
+            <input type="radio" id="week1" name="week" class="week-radio" checked>
+            <input type="radio" id="week2" name="week" class="week-radio">
+            <input type="radio" id="week3" name="week" class="week-radio">
+            <input type="radio" id="week4" name="week" class="week-radio">
+            <input type="radio" id="week5" name="week" class="week-radio">
+            
+            <div class="week-labels">
+              <label for="week1">Semana 1 (1-7)</label>
+              <label for="week2">Semana 2 (8-14)</label>
+              <label for="week3">Semana 3 (15-21)</label>
+              <label for="week4">Semana 4 (22-28)</label>
+              <label for="week5">Semana 5 (29-31)</label>
+            </div>
+
+            <div class="week-content" id="content-week1">
+              <div class="attendance-table">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Aluno</th>
+                      <th>1</th>
+                      <th>2</th>
+                      <th>3</th>
+                      <th>4</th>
+                      <th>5</th>
+                      <th>6</th>
+                      <th>7</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>João Silva</td>
+                      <td><button class="attendance-btn" data-state="present"></button></td>
+                      <td><button class="attendance-btn" data-state="absent"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn" data-state="present"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn" data-state="absent"></button></td>
+                    </tr>
+                    <tr>
+                      <td>Maria Sousa</td>
+                      <td><button class="attendance-btn" data-state="present"></button></td>
+                      <td><button class="attendance-btn" data-state="present"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn" data-state="present"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn" data-state="present"></button></td>
+                    </tr>
+                    <tr>
+                      <td>Ana Freitas</td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn" data-state="absent"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                    </tr>
+                    <tr>
+                      <td>Pedro Gomes</td>
+                      <td><button class="attendance-btn" data-state="present"></button></td>
+                      <td><button class="attendance-btn" data-state="present"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn" data-state="present"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn" data-state="present"></button></td>
+                    </tr>
+                    <tr>
+                      <td>Luís Andrade</td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn" data-state="present"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                    </tr>
+                    <tr>
+                      <td>Sofia Ramos</td>
+                      <td><button class="attendance-btn" data-state="present"></button></td>
+                      <td><button class="attendance-btn" data-state="present"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn" data-state="present"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn" data-state="present"></button></td>
+                    </tr>
+                    <tr>
+                      <td>Bruno Costa</td>
+                      <td><button class="attendance-btn" data-state="present"></button></td>
+                      <td><button class="attendance-btn" data-state="absent"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn" data-state="present"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn" data-state="present"></button></td>
+                    </tr>
+                    <tr>
+                      <td>Carla Nunes</td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn" data-state="present"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn" data-state="absent"></button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="week-content" id="content-week2">
+              <div class="attendance-table">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Aluno</th>
+                      <th>8</th>
+                      <th>9</th>
+                      <th>10</th>
+                      <th>11</th>
+                      <th>12</th>
+                      <th>13</th>
+                      <th>14</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>João Silva</td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn" data-state="present"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn" data-state="present"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                    </tr>
+                    <tr>
+                      <td>Maria Sousa</td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn" data-state="present"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn" data-state="present"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                    </tr>
+                    <tr>
+                      <td>Ana Freitas</td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                    </tr>
+                    <tr>
+                      <td>Pedro Gomes</td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn" data-state="present"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn" data-state="present"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                    </tr>
+                    <tr>
+                      <td>Luís Andrade</td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn" data-state="present"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                    </tr>
+                    <tr>
+                      <td>Sofia Ramos</td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn" data-state="present"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn" data-state="present"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                    </tr>
+                    <tr>
+                      <td>Bruno Costa</td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn" data-state="present"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn" data-state="present"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                    </tr>
+                    <tr>
+                      <td>Carla Nunes</td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn" data-state="present"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn" data-state="present"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="week-content" id="content-week3">
+              <div class="attendance-table">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Aluno</th>
+                      <th>15</th>
+                      <th>16</th>
+                      <th>17</th>
+                      <th>18</th>
+                      <th>19</th>
+                      <th>20</th>
+                      <th>21</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>João Silva</td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn" data-state="present"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn" data-state="absent"></button></td>
+                    </tr>
+                    <tr>
+                      <td>Maria Sousa</td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn" data-state="present"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn" data-state="present"></button></td>
+                    </tr>
+                    <tr>
+                      <td>Ana Freitas</td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                    </tr>
+                    <tr>
+                      <td>Pedro Gomes</td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn" data-state="present"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn" data-state="present"></button></td>
+                    </tr>
+                    <tr>
+                      <td>Luís Andrade</td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                    </tr>
+                    <tr>
+                      <td>Sofia Ramos</td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn" data-state="present"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn" data-state="present"></button></td>
+                    </tr>
+                    <tr>
+                      <td>Bruno Costa</td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn" data-state="present"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn" data-state="present"></button></td>
+                    </tr>
+                    <tr>
+                      <td>Carla Nunes</td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn"></button></td>
+                      <td><button class="attendance-btn" data-state="absent"></button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="week-content" id="content-week4">
+              <div class="attendance-table">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Aluno</th>
+                      <th>22</th>
+                      <th>23</th>
+                      <th>24</th>
+                      <th>25</th>
+                      <th>26</th>
+                      <th>27</th>
+                      <th>28</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>João Silva</td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td></tr>
+                    <tr><td>Maria Sousa</td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td></tr>
+                    <tr><td>Ana Freitas</td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td></tr>
+                    <tr><td>Pedro Gomes</td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td></tr>
+                    <tr><td>Luís Andrade</td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td></tr>
+                    <tr><td>Sofia Ramos</td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td></tr>
+                    <tr><td>Bruno Costa</td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td></tr>
+                    <tr><td>Carla Nunes</td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="week-content" id="content-week5">
+              <div class="attendance-table">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Aluno</th>
+                      <th>29</th>
+                      <th>30</th>
+                      <th>31</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>João Silva</td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td></tr>
+                    <tr><td>Maria Sousa</td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td></tr>
+                    <tr><td>Ana Freitas</td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td></tr>
+                    <tr><td>Pedro Gomes</td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td></tr>
+                    <tr><td>Luís Andrade</td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td></tr>
+                    <tr><td>Sofia Ramos</td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td></tr>
+                    <tr><td>Bruno Costa</td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td></tr>
+                    <tr><td>Carla Nunes</td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td><td><button class="attendance-btn"></button></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SUMÁRIO -->
+        <section class="sumario card">
+          <h2>Preenchimento de Sumário</h2>
+
+          <label>
+            Unidade Curricular
+            <select>
+              <option>Design Hipermédia_CTeSP_TPSI/Trabalho</option>
+            </select>
+          </label>
+
+          <label>
+            Título do Sumário
+            <input type="text" placeholder="Ex: Introdução ao CSS Grid">
+          </label>
+
+          <label>
+            Conteúdo do Sumário
+            <textarea rows="6" placeholder="Descreva aqui o conteúdo da aula..."></textarea>
+          </label>
+
+          <div class="topicos-actions">
+            <button class="ghost-btn">Adicionar Tópico de Sumário</button>
+            <button class="ghost-btn">Retirar Tópico de Sumário</button>
+          </div>
+
+          <details class="topics">
+            <summary>Tópicos do Sumário</summary>
+            <ul>
+              <li>Introdução ao tema</li>
+              <li>Exercícios práticos</li>
+              <li>Discussão final</li>
+            </ul>
+          </details>
+
+          <button class="submit-btn">Submeter Sumário</button>
+        </section>
+
+        <!-- CALENDÁRIO -->
+        <section class="calendar card">
+          <h2>Calendário</h2>
+
+          <!-- Radios para selecionar mês -->
+          <input type="radio" id="month-jan" name="month" class="month-radio" checked>
+          <input type="radio" id="month-fev" name="month" class="month-radio">
+          <input type="radio" id="month-mar" name="month" class="month-radio">
+
+          <!-- Botões de navegação -->
+          <div class="calendar-nav">
+            <label for="month-jan" class="month-nav-btn prev-btn">‹</label>
+            <label for="month-jan" class="month-nav-btn prev-btn">‹</label>
+            <label for="month-fev" class="month-nav-btn prev-btn">‹</label>
+            <div class="month-display">
+              <span class="month-name">Janeiro 2026</span>
+            </div>
+            <label for="month-fev" class="month-nav-btn next-btn">›</label>
+            <label for="month-mar" class="month-nav-btn next-btn">›</label>
+          </div>
+
+          <!-- Abas dos meses -->
+          <div class="months-container">
+
+            <!-- JANEIRO -->
+            <div class="month-content" id="content-month-jan">
+              <div class="calendar-grid">
+                <div class="calendar-weekday">Seg</div>
+                <div class="calendar-weekday">Ter</div>
+                <div class="calendar-weekday">Qua</div>
+                <div class="calendar-weekday">Qui</div>
+                <div class="calendar-weekday">Sex</div>
+                <div class="calendar-weekday">Sab</div>
+                <div class="calendar-weekday">Dom</div>
+                
+                <div class="calendar-day other-month">31</div>
+                <input type="checkbox" id="aula-jan-01" hidden>
+                <label for="aula-jan-01" class="calendar-day has-aula"><span>1</span><span class="lecture-dot">●</span><span class="hidden-info">09:00|Sala 101</span></label>
+                <div class="calendar-day">2</div>
+                <div class="calendar-day">3</div>
+                <div class="calendar-day">4</div>
+                <input type="checkbox" id="aula-jan-06" hidden>
+                <label for="aula-jan-06" class="calendar-day has-aula"><span>6</span><span class="lecture-dot">●</span><span class="hidden-info">14:30|Sala 205</span></label>
+                <input type="checkbox" id="aula-jan-08" hidden>
+                <label for="aula-jan-08" class="calendar-day has-aula"><span>8</span><span class="lecture-dot">●</span><span class="hidden-info">10:00|Sala 103</span></label>
+                <div class="calendar-day">9</div>
+                <div class="calendar-day">10</div>
+                <div class="calendar-day">11</div>
+                <div class="calendar-day">12</div>
+                <input type="checkbox" id="aula-jan-13" hidden>
+                <label for="aula-jan-13" class="calendar-day has-aula"><span>13</span><span class="lecture-dot">●</span><span class="hidden-info">09:00|Sala 101</span></label>
+                <input type="checkbox" id="aula-jan-15" hidden>
+                <label for="aula-jan-15" class="calendar-day has-aula"><span>15</span><span class="lecture-dot">●</span><span class="hidden-info">11:00|Sala 102</span></label>
+                <div class="calendar-day">16</div>
+                <div class="calendar-day">17</div>
+                <div class="calendar-day">18</div>
+                <div class="calendar-day">19</div>
+                <input type="checkbox" id="aula-jan-20" hidden>
+                <label for="aula-jan-20" class="calendar-day has-aula"><span>20</span><span class="lecture-dot">●</span><span class="hidden-info">10:00|Sala 104</span></label>
+                <input type="checkbox" id="aula-jan-22" hidden>
+                <label for="aula-jan-22" class="calendar-day has-aula"><span>22</span><span class="lecture-dot">●</span><span class="hidden-info">13:00|Sala 205</span></label>
+                <div class="calendar-day">23</div>
+                <div class="calendar-day">24</div>
+                <div class="calendar-day">25</div>
+                <div class="calendar-day">26</div>
+                <input type="checkbox" id="aula-jan-27" hidden>
+                <label for="aula-jan-27" class="calendar-day has-aula"><span>27</span><span class="lecture-dot">●</span><span class="hidden-info">09:30|Sala 101</span></label>
+                <input type="checkbox" id="aula-jan-29" hidden>
+                <label for="aula-jan-29" class="calendar-day has-aula"><span>29</span><span class="lecture-dot">●</span><span class="hidden-info">10:00|Sala 103</span></label>
+                <div class="calendar-day">30</div>
+                <div class="calendar-day">31</div>
+                <div class="calendar-day other-month">1</div>
+              </div>
+            </div>
+
+            <!-- FEVEREIRO -->
+            <div class="month-content" id="content-month-fev">
+              <div class="calendar-grid">
+                <div class="calendar-weekday">Seg</div>
+                <div class="calendar-weekday">Ter</div>
+                <div class="calendar-weekday">Qua</div>
+                <div class="calendar-weekday">Qui</div>
+                <div class="calendar-weekday">Sex</div>
+                <div class="calendar-weekday">Sab</div>
+                <div class="calendar-weekday">Dom</div>
+                
+                <div class="calendar-day">26</div>
+                <div class="calendar-day">27</div>
+                <div class="calendar-day">28</div>
+                <div class="calendar-day">29</div>
+                <div class="calendar-day">30</div>
+                <div class="calendar-day">31</div>
+                <input type="checkbox" id="aula-fev-01" hidden>
+                <label for="aula-fev-01" class="calendar-day has-aula"><span>1</span><span class="lecture-dot">●</span><span class="hidden-info">09:00|Sala 102</span></label>
+                <div class="calendar-day">2</div>
+                <input type="checkbox" id="aula-fev-03" hidden>
+                <label for="aula-fev-03" class="calendar-day has-aula"><span>3</span><span class="lecture-dot">●</span><span class="hidden-info">14:00|Sala 205</span></label>
+                <input type="checkbox" id="aula-fev-05" hidden>
+                <label for="aula-fev-05" class="calendar-day has-aula"><span>5</span><span class="lecture-dot">●</span><span class="hidden-info">10:30|Sala 104</span></label>
+                <div class="calendar-day">6</div>
+                <div class="calendar-day">7</div>
+                <div class="calendar-day">8</div>
+                <div class="calendar-day">9</div>
+                <input type="checkbox" id="aula-fev-10" hidden>
+                <label for="aula-fev-10" class="calendar-day has-aula"><span>10</span><span class="lecture-dot">●</span><span class="hidden-info">09:00|Sala 101</span></label>
+                <input type="checkbox" id="aula-fev-12" hidden>
+                <label for="aula-fev-12" class="calendar-day has-aula"><span>12</span><span class="lecture-dot">●</span><span class="hidden-info">11:00|Sala 103</span></label>
+                <div class="calendar-day">13</div>
+                <div class="calendar-day">14</div>
+                <div class="calendar-day">15</div>
+                <div class="calendar-day">16</div>
+                <input type="checkbox" id="aula-fev-17" hidden>
+                <label for="aula-fev-17" class="calendar-day has-aula"><span>17</span><span class="lecture-dot">●</span><span class="hidden-info">10:00|Sala 205</span></label>
+                <input type="checkbox" id="aula-fev-19" hidden>
+                <label for="aula-fev-19" class="calendar-day has-aula"><span>19</span><span class="lecture-dot">●</span><span class="hidden-info">14:30|Sala 102</span></label>
+                <div class="calendar-day">20</div>
+                <div class="calendar-day">21</div>
+                <div class="calendar-day">22</div>
+                <div class="calendar-day">23</div>
+                <input type="checkbox" id="aula-fev-24" hidden>
+                <label for="aula-fev-24" class="calendar-day has-aula"><span>24</span><span class="lecture-dot">●</span><span class="hidden-info">09:00|Sala 104</span></label>
+                <input type="checkbox" id="aula-fev-26" hidden>
+                <label for="aula-fev-26" class="calendar-day has-aula"><span>26</span><span class="lecture-dot">●</span><span class="hidden-info">13:00|Sala 101</span></label>
+                <div class="calendar-day">27</div>
+                <div class="calendar-day">28</div>
+                <div class="calendar-day other-month">1</div>
+                <div class="calendar-day other-month">2</div>
+              </div>
+            </div>
+
+            <!-- MARÇO -->
+            <div class="month-content" id="content-month-mar">
+              <div class="calendar-grid">
+                <div class="calendar-weekday">Seg</div>
+                <div class="calendar-weekday">Ter</div>
+                <div class="calendar-weekday">Qua</div>
+                <div class="calendar-weekday">Qui</div>
+                <div class="calendar-weekday">Sex</div>
+                <div class="calendar-weekday">Sab</div>
+                <div class="calendar-weekday">Dom</div>
+                
+                <div class="calendar-day other-month">23</div>
+                <div class="calendar-day other-month">24</div>
+                <input type="checkbox" id="aula-mar-02" hidden>
+                <label for="aula-mar-02" class="calendar-day has-aula"><span>2</span><span class="lecture-dot">●</span><span class="hidden-info">10:00|Sala 103</span></label>
+                <input type="checkbox" id="aula-mar-03" hidden>
+                <label for="aula-mar-03" class="calendar-day has-aula"><span>3</span><span class="lecture-dot">●</span><span class="hidden-info">09:00|Sala 205</span></label>
+                <input type="checkbox" id="aula-mar-05" hidden>
+                <label for="aula-mar-05" class="calendar-day has-aula"><span>5</span><span class="lecture-dot">●</span><span class="hidden-info">14:00|Sala 102</span></label>
+                <div class="calendar-day">6</div>
+                <div class="calendar-day">7</div>
+                <div class="calendar-day">8</div>
+                <div class="calendar-day">9</div>
+                <input type="checkbox" id="aula-mar-10" hidden>
+                <label for="aula-mar-10" class="calendar-day has-aula"><span>10</span><span class="lecture-dot">●</span><span class="hidden-info">13:30|Sala 104</span></label>
+                <input type="checkbox" id="aula-mar-12" hidden>
+                <label for="aula-mar-12" class="calendar-day has-aula"><span>12</span><span class="lecture-dot">●</span><span class="hidden-info">11:00|Sala 101</span></label>
+                <div class="calendar-day">13</div>
+                <div class="calendar-day">14</div>
+                <div class="calendar-day">15</div>
+                <div class="calendar-day">16</div>
+                <input type="checkbox" id="aula-mar-17" hidden>
+                <label for="aula-mar-17" class="calendar-day has-aula"><span>17</span><span class="lecture-dot">●</span><span class="hidden-info">10:30|Sala 205</span></label>
+                <input type="checkbox" id="aula-mar-19" hidden>
+                <label for="aula-mar-19" class="calendar-day has-aula"><span>19</span><span class="lecture-dot">●</span><span class="hidden-info">09:00|Sala 103</span></label>
+                <div class="calendar-day">20</div>
+                <div class="calendar-day">21</div>
+                <div class="calendar-day">22</div>
+                <div class="calendar-day">23</div>
+                <input type="checkbox" id="aula-mar-24" hidden>
+                <label for="aula-mar-24" class="calendar-day has-aula"><span>24</span><span class="lecture-dot">●</span><span class="hidden-info">14:00|Sala 102</span></label>
+                <input type="checkbox" id="aula-mar-26" hidden>
+                <label for="aula-mar-26" class="calendar-day has-aula"><span>26</span><span class="lecture-dot">●</span><span class="hidden-info">10:00|Sala 104</span></label>
+                <div class="calendar-day">27</div>
+                <div class="calendar-day">28</div>
+                <div class="calendar-day">29</div>
+                <div class="calendar-day">30</div>
+                <input type="checkbox" id="aula-mar-31" hidden>
+                <label for="aula-mar-31" class="calendar-day has-aula"><span>31</span><span class="lecture-dot">●</span><span class="hidden-info">09:00|Sala 101</span></label>
+              </div>
+            </div>
+          </div>
+
+          <!-- MODAIS para cada dia com aula -->
+          <div class="modals-container">
+            <!-- Janeiro -->
+            <div class="modal-overlay" id="aula-jan-01:before"><div class="modal"><label for="aula-jan-01" class="modal-close">&times;</label><h3>1 de Janeiro</h3><p><strong>Hora:</strong> 09:00</p><p><strong>Sala:</strong> 101</p></div></div>
+            <div class="modal-overlay" id="aula-jan-06:before"><div class="modal"><label for="aula-jan-06" class="modal-close">&times;</label><h3>6 de Janeiro</h3><p><strong>Hora:</strong> 14:30</p><p><strong>Sala:</strong> 205</p></div></div>
+            <div class="modal-overlay" id="aula-jan-08:before"><div class="modal"><label for="aula-jan-08" class="modal-close">&times;</label><h3>8 de Janeiro</h3><p><strong>Hora:</strong> 10:00</p><p><strong>Sala:</strong> 103</p></div></div>
+            <div class="modal-overlay" id="aula-jan-13:before"><div class="modal"><label for="aula-jan-13" class="modal-close">&times;</label><h3>13 de Janeiro</h3><p><strong>Hora:</strong> 09:00</p><p><strong>Sala:</strong> 101</p></div></div>
+            <div class="modal-overlay" id="aula-jan-15:before"><div class="modal"><label for="aula-jan-15" class="modal-close">&times;</label><h3>15 de Janeiro</h3><p><strong>Hora:</strong> 11:00</p><p><strong>Sala:</strong> 102</p></div></div>
+            <div class="modal-overlay" id="aula-jan-20:before"><div class="modal"><label for="aula-jan-20" class="modal-close">&times;</label><h3>20 de Janeiro</h3><p><strong>Hora:</strong> 10:00</p><p><strong>Sala:</strong> 104</p></div></div>
+            <div class="modal-overlay" id="aula-jan-22:before"><div class="modal"><label for="aula-jan-22" class="modal-close">&times;</label><h3>22 de Janeiro</h3><p><strong>Hora:</strong> 13:00</p><p><strong>Sala:</strong> 205</p></div></div>
+            <div class="modal-overlay" id="aula-jan-27:before"><div class="modal"><label for="aula-jan-27" class="modal-close">&times;</label><h3>27 de Janeiro</h3><p><strong>Hora:</strong> 09:30</p><p><strong>Sala:</strong> 101</p></div></div>
+            <div class="modal-overlay" id="aula-jan-29:before"><div class="modal"><label for="aula-jan-29" class="modal-close">&times;</label><h3>29 de Janeiro</h3><p><strong>Hora:</strong> 10:00</p><p><strong>Sala:</strong> 103</p></div></div>
+
+            <!-- Fevereiro -->
+            <div class="modal-overlay" id="aula-fev-01:before"><div class="modal"><label for="aula-fev-01" class="modal-close">&times;</label><h3>1 de Fevereiro</h3><p><strong>Hora:</strong> 09:00</p><p><strong>Sala:</strong> 102</p></div></div>
+            <div class="modal-overlay" id="aula-fev-03:before"><div class="modal"><label for="aula-fev-03" class="modal-close">&times;</label><h3>3 de Fevereiro</h3><p><strong>Hora:</strong> 14:00</p><p><strong>Sala:</strong> 205</p></div></div>
+            <div class="modal-overlay" id="aula-fev-05:before"><div class="modal"><label for="aula-fev-05" class="modal-close">&times;</label><h3>5 de Fevereiro</h3><p><strong>Hora:</strong> 10:30</p><p><strong>Sala:</strong> 104</p></div></div>
+            <div class="modal-overlay" id="aula-fev-10:before"><div class="modal"><label for="aula-fev-10" class="modal-close">&times;</label><h3>10 de Fevereiro</h3><p><strong>Hora:</strong> 09:00</p><p><strong>Sala:</strong> 101</p></div></div>
+            <div class="modal-overlay" id="aula-fev-12:before"><div class="modal"><label for="aula-fev-12" class="modal-close">&times;</label><h3>12 de Fevereiro</h3><p><strong>Hora:</strong> 11:00</p><p><strong>Sala:</strong> 103</p></div></div>
+            <div class="modal-overlay" id="aula-fev-17:before"><div class="modal"><label for="aula-fev-17" class="modal-close">&times;</label><h3>17 de Fevereiro</h3><p><strong>Hora:</strong> 10:00</p><p><strong>Sala:</strong> 205</p></div></div>
+            <div class="modal-overlay" id="aula-fev-19:before"><div class="modal"><label for="aula-fev-19" class="modal-close">&times;</label><h3>19 de Fevereiro</h3><p><strong>Hora:</strong> 14:30</p><p><strong>Sala:</strong> 102</p></div></div>
+            <div class="modal-overlay" id="aula-fev-24:before"><div class="modal"><label for="aula-fev-24" class="modal-close">&times;</label><h3>24 de Fevereiro</h3><p><strong>Hora:</strong> 09:00</p><p><strong>Sala:</strong> 104</p></div></div>
+            <div class="modal-overlay" id="aula-fev-26:before"><div class="modal"><label for="aula-fev-26" class="modal-close">&times;</label><h3>26 de Fevereiro</h3><p><strong>Hora:</strong> 13:00</p><p><strong>Sala:</strong> 101</p></div></div>
+
+            <!-- Março -->
+            <div class="modal-overlay" id="aula-mar-02:before"><div class="modal"><label for="aula-mar-02" class="modal-close">&times;</label><h3>2 de Março</h3><p><strong>Hora:</strong> 10:00</p><p><strong>Sala:</strong> 103</p></div></div>
+            <div class="modal-overlay" id="aula-mar-03:before"><div class="modal"><label for="aula-mar-03" class="modal-close">&times;</label><h3>3 de Março</h3><p><strong>Hora:</strong> 09:00</p><p><strong>Sala:</strong> 205</p></div></div>
+            <div class="modal-overlay" id="aula-mar-05:before"><div class="modal"><label for="aula-mar-05" class="modal-close">&times;</label><h3>5 de Março</h3><p><strong>Hora:</strong> 14:00</p><p><strong>Sala:</strong> 102</p></div></div>
+            <div class="modal-overlay" id="aula-mar-10:before"><div class="modal"><label for="aula-mar-10" class="modal-close">&times;</label><h3>10 de Março</h3><p><strong>Hora:</strong> 13:30</p><p><strong>Sala:</strong> 104</p></div></div>
+            <div class="modal-overlay" id="aula-mar-12:before"><div class="modal"><label for="aula-mar-12" class="modal-close">&times;</label><h3>12 de Março</h3><p><strong>Hora:</strong> 11:00</p><p><strong>Sala:</strong> 101</p></div></div>
+            <div class="modal-overlay" id="aula-mar-17:before"><div class="modal"><label for="aula-mar-17" class="modal-close">&times;</label><h3>17 de Março</h3><p><strong>Hora:</strong> 10:30</p><p><strong>Sala:</strong> 205</p></div></div>
+            <div class="modal-overlay" id="aula-mar-19:before"><div class="modal"><label for="aula-mar-19" class="modal-close">&times;</label><h3>19 de Março</h3><p><strong>Hora:</strong> 09:00</p><p><strong>Sala:</strong> 103</p></div></div>
+            <div class="modal-overlay" id="aula-mar-24:before"><div class="modal"><label for="aula-mar-24" class="modal-close">&times;</label><h3>24 de Março</h3><p><strong>Hora:</strong> 14:00</p><p><strong>Sala:</strong> 102</p></div></div>
+            <div class="modal-overlay" id="aula-mar-26:before"><div class="modal"><label for="aula-mar-26" class="modal-close">&times;</label><h3>26 de Março</h3><p><strong>Hora:</strong> 10:00</p><p><strong>Sala:</strong> 104</p></div></div>
+            <div class="modal-overlay" id="aula-mar-31:before"><div class="modal"><label for="aula-mar-31" class="modal-close">&times;</label><h3>31 de Março</h3><p><strong>Hora:</strong> 09:00</p><p><strong>Sala:</strong> 101</p></div></div>
+          </div>
+        </section>
+
+      </section>
+
+
+    </main>
+
+    <!-- FOOTER COM LOGOS / TEXTO -->
+    <footer class="site-footer">
+      <div class="footer-logos">
+        <span>2030 MADEIRA</span>
+        <span>REGIÃO AUTÓNOMA DA MADEIRA</span>
+        <span>PORTUGAL 2030</span>
+        <span>Cofinanciado pela União Europeia</span>
+      </div>
+    </footer>
+
+  </div>
+</body>
+
+</html>
